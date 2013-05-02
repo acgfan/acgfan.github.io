@@ -33,50 +33,50 @@
 
 <script type="text/javascript">
 function getNewLink(){
-	//获取原链接
-	var inputUrl = document.getElementById("inputUrl");
-	//获取扩展名
-	var file_value = "";
-	var file_type = document.getElementsByName("file_type");
-	for(var i=0; i<file_type.length; i++){
-		if(file_type[i].checked){
-			file_value = file_type[i].value;
-			break;
-		}
-	}
-	var file_other = document.getElementById("file_other");
-	var file_other_text = document.getElementById("file_other_text");
-	var outputUrl = document.getElementById("outputUrl");
+    //获取原链接
+    var inputUrl = document.getElementById("inputUrl");
+    //获取扩展名
+    var file_value = "";
+    var file_type = document.getElementsByName("file_type");
+    for(var i=0; i<file_type.length; i++){
+        if(file_type[i].checked){
+            file_value = file_type[i].value;
+            break;
+        }
+    }
+    var file_other = document.getElementById("file_other");
+    var file_other_text = document.getElementById("file_other_text");
+    var outputUrl = document.getElementById("outputUrl");
     var playUrl = document.getElementById("playUrl");
 
-	var abc = inputUrl.value.substring(inputUrl.value.indexOf('=')+1).replace('&uk=', 'v');
-	var reg = /^\d+v\d+$/;
-	if(!reg.test(abc)){
-		alert("链接错误！");
-		inputUrl.focus();
-		return false;
-	}
-	//拼接最终结果
-	if(file_value == 'other'){
-		if(file_other_text.value.length == 0){
-			alert("扩展名不能为空！");
-			inputUrl.focus();
-			return false;
-		}
-		outputUrl.value = "http://acgfan.duapp.com/" + abc + "." + file_other_text.value;
+    var abc = inputUrl.value.substring(inputUrl.value.indexOf('=')+1).replace('&uk=', 'v');
+    var reg = /^\d+v\d+$/;
+    if(!reg.test(abc)){
+        alert("链接错误！");
+        inputUrl.focus();
+        return false;
+    }
+    //拼接最终结果
+    if(file_value == 'other'){
+        if(file_other_text.value.length == 0){
+            alert("扩展名不能为空！");
+            inputUrl.focus();
+            return false;
+        }
+        outputUrl.value = "http://acgfan.duapp.com/" + abc + "." + file_other_text.value;
         playUrl.value = "http://acgfan.duapp.com/v" + abc;
-	}else{
-		outputUrl.value = "http://acgfan.duapp.com/" + abc + "." + file_value;
+    }else{
+        outputUrl.value = "http://acgfan.duapp.com/" + abc + "." + file_value;
         playUrl.value = "http://acgfan.duapp.com/v" + abc;
-	}
+    }
 }
 function fileOtherTextChange(){
-	if(file_other.checked==true){
-		file_other_text.disabled=false;
-		file_other_text.focus();
-	}else{
-		file_other_text.disabled=true;
-	}
+    if(file_other.checked==true){
+        file_other_text.disabled=false;
+        file_other_text.focus();
+    }else{
+        file_other_text.disabled=true;
+    }
 }
 </script>
 
@@ -88,7 +88,7 @@ function fileOtherTextChange(){
       <div class='navbar-inner nav-collapse' style="height: auto;">
         <ul class="nav">
           <li ><a href="http://acgfan.duapp.com/">主页</a></li>
-          <li class="active"><a href="http://acgfan.duapp.com/dupan">百度网盘永久链接</a></li>
+          <li class="active"><a href="#">百度网盘永久链接</a></li>
           <li ><a href="http://acgfan.duapp.com/urlconvert">下载地址转换</a></li>
           <li ><a href="http://acgfan.duapp.com/say">文本变语音</a></li>
         </ul>
@@ -99,21 +99,21 @@ function fileOtherTextChange(){
 
 <h2>百度网盘文件永久外链</h2>
 <form id="pan_form">
-	<p>请输入链接：<input type="text" class="input-medium search-query" style="width:550px;" id="inputUrl" value="" onMouseOver="this.select()"  /></p>
-	<p>（例如：<a target="_blank" style="text-decoration:none" href="http://pan.baidu.com/share/link?shareid=430100&amp;uk=2987247908">http://pan.baidu.com/share/link?shareid=430100&amp;uk=2987247908</a>）</p>
-	<p>文件的扩展名：
-		<input type="radio" class="radio" name="file_type" id="file_mp3" value="mp3" onChange="fileOtherTextChange()" checked />mp3 
-		<input type="radio" class="radio" name="file_type" id="file_png" value="png" onChange="fileOtherTextChange()" />png 
-		<input type="radio" class="radio" name="file_type" id="file_exe" value="exe" onChange="fileOtherTextChange()" />exe 
-		<input type="radio" class="radio" name="file_type" id="file_zip" value="zip" onChange="fileOtherTextChange()" />zip 
-		<input type="radio" class="radio" name="file_type" id="file_mp4" value="mp4" onChange="fileOtherTextChange()" />mp4 
-		<input type="radio" class="radio" name="file_type" id="file_other" value="other" onChange="fileOtherTextChange()" />其他格式
+    <p>请输入链接：<input type="text" class="input-medium search-query" style="width:550px;" id="inputUrl" value="" onMouseOver="this.select()"  /></p>
+    <p>（例如：<a target="_blank" style="text-decoration:none" href="http://pan.baidu.com/share/link?shareid=430100&amp;uk=2987247908">http://pan.baidu.com/share/link?shareid=430100&amp;uk=2987247908</a>）</p>
+    <p>文件的扩展名：
+        <input type="radio" class="radio" name="file_type" id="file_mp3" value="mp3" onChange="fileOtherTextChange()" checked />mp3 
+        <input type="radio" class="radio" name="file_type" id="file_png" value="png" onChange="fileOtherTextChange()" />png 
+        <input type="radio" class="radio" name="file_type" id="file_exe" value="exe" onChange="fileOtherTextChange()" />exe 
+        <input type="radio" class="radio" name="file_type" id="file_zip" value="zip" onChange="fileOtherTextChange()" />zip 
+        <input type="radio" class="radio" name="file_type" id="file_mp4" value="mp4" onChange="fileOtherTextChange()" />mp4 
+        <input type="radio" class="radio" name="file_type" id="file_other" value="other" onChange="fileOtherTextChange()" />其他格式
         <input type="text" class="input-medium search-query" style="width:80px;" id="file_other_text" disabled />
-	</p>
+    </p>
     <p><input type="button" class="btn" id="getLinkBtn" value="获取" onClick="getNewLink()" />
-	<input type="reset" class="btn" value="清空" onclick="this.form.reset();" /></p>
-	<p><b>永久链接为：</b><input type="text" class="input-medium search-query" style="width:550px;" id="outputUrl" value="" onMouseOver="this.select()" /></p>
-	<p>（例如：<a target="_blank" style="text-decoration:none" href="http://acgfan.duapp.com/430100v2987247908.mp3">http://acgfan.duapp.com/430100v2987247908.mp3</a> 可直接下载）</p>
+    <input type="reset" class="btn" value="清空" onclick="this.form.reset();" /></p>
+    <p><b>永久链接为：</b><input type="text" class="input-medium search-query" style="width:550px;" id="outputUrl" value="" onMouseOver="this.select()" /></p>
+    <p>（例如：<a target="_blank" style="text-decoration:none" href="http://acgfan.duapp.com/430100v2987247908.mp3">http://acgfan.duapp.com/430100v2987247908.mp3</a> 可直接下载）</p>
     <p><b>音视频播放地址为（需要html5支持）：</b><input type="text" class="input-medium search-query" style="width:550px;" id="playUrl" onMouseOver="this.select()" /></p>
     <p>（例如：<a target="_blank" style="text-decoration:none" href="http://acgfan.duapp.com/v100556v656138769">http://acgfan.duapp.com/v100556v656138769</a> 打开可播放，前提是浏览器支持）</p>
 </form><br /><br />
@@ -123,7 +123,7 @@ function fileOtherTextChange(){
         <div class='span3 sidebar'>
             <h2>浏览</h2>
             <ul class="nav nav-tabs nav-stacked">
-            <li><a href='http://acgfan.duapp.com/dupan'>百度网盘永久链接</a></li>
+            <li><a href='#'>百度网盘永久链接</a></li>
             <li><a href='http://acgfan.duapp.com/urlconvert'>下载地址转换</a></li>
             <li><a href='http://acgfan.duapp.com/say'>文本变语音</a></li>
             </ul>
