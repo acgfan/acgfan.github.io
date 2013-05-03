@@ -1,6 +1,6 @@
 ---
 layout: page
-title: acgfan 主页
+title: acgfan
 tagline: 主页
 ---
 {% include JB/setup %}
